@@ -30,6 +30,7 @@ const Main = ({
     ]);
     const span = document.createElement("span");
     span.className = "annotation highlight";
+    span.id = `annotation-${selection.toString()}`;
     span.innerHTML = selection.toString() + `<small> (${tag})</small>`;
     range.deleteContents();
     range.insertNode(span);

@@ -1,20 +1,30 @@
-import { ReactComponent as HamMenu } from "./hamburger-menu.svg";
 import SectionHead from "./SectionHead";
 import { useState } from "react";
+import DialogBox from "./DialogBox";
 
 const Annotations = ({
   AnnotationList,
   setAnnotationList,
-  countPerson,
-  countOrg,
   setCountPerson,
   setCountOrg,
+  dialogBox,
   setDialogBox,
 }) => {
   const [openSideRight, setOpenSideRight] = useState(true);
+  const [rowVal, setRowVal] = useState({});
   console.log(AnnotationList);
   return (
     <>
+      {dialogBox && (
+        <DialogBox
+          setDialogBox={setDialogBox}
+          AnnotationList={AnnotationList}
+          setAnnotationList={setAnnotationList}
+          rowVal={rowVal}
+          setCountPerson={setCountPerson}
+          setCountOrg={setCountOrg}
+        />
+      )}
       {openSideRight === true ? (
         <section className="side-section annotations">
           <SectionHead
@@ -31,14 +41,7 @@ const Annotations = ({
                   className="annotation-remove"
                   onClick={() => {
                     setDialogBox(true);
-                    // if (annotation.tag === "Person") {
-                    //   setCountPerson((countPerson) => countPerson - 1);
-                    // } else if (annotation.tag === "Org") {
-                    //   setCountOrg((countOrg) => countOrg - 1);
-                    // }
-                    // setAnnotationList(
-                    //   AnnotationList.filter((_, i) => i !== index)
-                    // );
+                    setRowVal({...annotation, index});
                   }}
                 >
                   X

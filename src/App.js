@@ -3,7 +3,6 @@ import Main from "./Components/Main";
 import Records from "./Components/Records";
 import Annotations from "./Components/Annotations";
 import { useState } from "react";
-import DialogBox from "./Components/DialogBox";
 
 function App() {
   const [AnnotationList, setAnnotationList] = useState([]);
@@ -13,7 +12,6 @@ function App() {
 
   return (
     <>
-      {dialogBox && <DialogBox setDialogBox={setDialogBox} />}
       {dialogBox && <div className="cover-d"></div>}
       <div className="container">
         <Records />
@@ -32,6 +30,7 @@ function App() {
           countOrg={countOrg}
           setCountPerson={setCountPerson}
           setCountOrg={setCountOrg}
+          dialogBox={dialogBox}
           setDialogBox={setDialogBox}
         />
       </div>
