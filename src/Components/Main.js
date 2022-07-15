@@ -35,7 +35,7 @@ const Main = ({ AnnotationList, setAnnotationList }) => {
     }
   }
   return (
-    <section>
+    <section className="section-main">
       <div className="section-head">
         <span></span>
         <span>

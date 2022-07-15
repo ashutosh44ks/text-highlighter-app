@@ -11,8 +11,16 @@ body {
 }
 .container > section.side-section {
   width: 15%;
-  margin: 0 10px;
   background-color: white;
+  min-width: 160px;
+}
+.side-section.records,
+.mini-records {
+  margin-right: 10px;
+}
+.side-section.annotations,
+.mini-annotations {
+  margin-left: 10px;
 }
 .section-head,
 .ham-btn {
@@ -42,7 +50,6 @@ body {
   padding: 10px 5px;
   background-color: plum;
   cursor: pointer;
-
 }
 .record-item-selected {
   background-color: white;
@@ -52,4 +59,25 @@ body {
 }
 .annotation.highlight {
   background-color: yellow;
+}
+.mini-side {
+  background-color: blueviolet;
+  writing-mode: vertical-lr;
+  text-orientation: upright;
+  display: flex;
+  align-items: center;
+  color: white;
+  padding: 5px;
+  justify-content: center;
+  height: 80vh;
+  width: 30px;
+  cursor: pointer;
+}
+.mini-side > .ham-btn {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+}
+.section-main {
+  flex-grow: 2;
 }
