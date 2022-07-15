@@ -1,0 +1,55 @@
+body {
+  margin: 5px;
+  background-color: gainsboro;
+}
+.container {
+  display: flex;
+}
+.container > section {
+  width: 66%;
+  background-color: white;
+}
+.container > section.side-section {
+  width: 15%;
+  margin: 0 10px;
+  background-color: white;
+}
+.section-head,
+.ham-btn {
+  display: flex;
+  align-items: center;
+}
+.ham-btn {
+  display: flex;
+}
+.side-section-head {
+  justify-content: space-between;
+  border: solid 1px black;
+}
+.section-head {
+  background-color: blueviolet;
+  color: white;
+  padding: 10px 5px;
+}
+.section-head > h3 {
+  margin: 0;
+}
+.record-item {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  border: solid 1px black;
+  padding: 10px 5px;
+  background-color: plum;
+  cursor: pointer;
+
+}
+.record-item-selected {
+  background-color: white;
+}
+.input-text-container {
+  padding: 10px;
+}
+.annotation.highlight {
+  background-color: yellow;
+}
