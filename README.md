@@ -1,3 +1,25 @@
+# Text Highlighter App
+
+## Functionalities -
+1. Selected Text can be labelled as either a "Person" or an"Organisation"
+2. These labels can be removed
+3. Sidebars are minimise-able
+
+## How to run the app -
+[Click Here](https://ashutosh44ks.github.io/text-highlighter-app/)
+OR
+Check the github page section of this repository
+OR
+git clone this project and in the cloned directory, run command - npm start
+
+## How to annote?
+1. Upload a file from the input button in the middle section of the page
+2. Select a word and click either "Person" or "Org" button in the header of the middle section of the page
+3. Your selected word in now annoated as shown in the right section of the page
+4. Clicking X in that section would prompt a delete confirmation, accepting which will remove the annote from the word
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
