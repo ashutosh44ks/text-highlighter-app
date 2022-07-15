@@ -10,9 +10,10 @@ body {
   background-color: white;
 }
 .container > section.side-section {
-  width: 15%;
+  width: 20%;
   background-color: white;
   min-width: 160px;
+  height: 96vh;
 }
 .side-section.records,
 .mini-records {
@@ -39,6 +40,9 @@ body {
   color: white;
   padding: 10px 5px;
 }
+.section-main > .section-head {
+  padding: 10px;
+}
 .section-head > h3 {
   margin: 0;
 }
@@ -60,6 +64,9 @@ body {
 .annotation.highlight {
   background-color: yellow;
 }
+.annotation.highlight > small {
+  color: blueviolet;
+}
 .mini-side {
   background-color: blueviolet;
   writing-mode: vertical-lr;
@@ -69,7 +76,7 @@ body {
   color: white;
   padding: 5px;
   justify-content: center;
-  height: 80vh;
+  height: 96vh;
   width: 30px;
   cursor: pointer;
 }
@@ -80,4 +87,28 @@ body {
 }
 .section-main {
   flex-grow: 2;
+}
+.btn-main {
+  margin-right: 5px;
+  color: blueviolet;
+  background-color: white;
+  border: none;
+  border-radius: 2px;
+  padding: 4px 8px;
+  cursor: pointer;
+}
+.main-info {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+}
+.annotation-item {
+  font-size: 0.8rem;
+  padding: 10px 5px;
+  display: flex;
+  justify-content: space-around;
+}
+.annotation-remove {
+  color: blueviolet;
+  cursor: pointer;
 }

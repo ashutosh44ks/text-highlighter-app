@@ -1,9 +1,14 @@
 import { useState } from "react";
 
-const Main = ({ AnnotationList, setAnnotationList }) => {
+const Main = ({
+  AnnotationList,
+  setAnnotationList,
+  countPerson,
+  countOrg,
+  setCountPerson,
+  setCountOrg,
+}) => {
   const [text, setText] = useState("");
-  const [countPerson, setCountPerson] = useState(0);
-  const [countOrg, setCountOrg] = useState(0);
   const showFile = (e) => {
     e.preventDefault();
     const reader = new FileReader();
@@ -25,7 +30,7 @@ const Main = ({ AnnotationList, setAnnotationList }) => {
     ]);
     const span = document.createElement("span");
     span.className = "annotation highlight";
-    span.innerText = selection.toString() + tag;
+    span.innerHTML = selection.toString() + `<small> (${tag})</small>`;
     range.deleteContents();
     range.insertNode(span);
     if (tag === "Person") {
@@ -40,6 +45,7 @@ const Main = ({ AnnotationList, setAnnotationList }) => {
         <span></span>
         <span>
           <button
+            className="btn-main"
             onClick={(e) => {
               setAnnotation(e.target.innerText);
             }}
@@ -47,6 +53,7 @@ const Main = ({ AnnotationList, setAnnotationList }) => {
             Person
           </button>
           <button
+            className="btn-main"
             onClick={(e) => {
               setAnnotation(e.target.innerText);
             }}
@@ -55,8 +62,12 @@ const Main = ({ AnnotationList, setAnnotationList }) => {
           </button>
         </span>
       </div>
-      <input type="file" onChange={showFile} />
-      persons - {countPerson} | orgs - {countOrg}
+      <div className="main-info">
+        <input type="file" onChange={showFile} />
+        <span>
+          persons - {countPerson} | orgs - {countOrg}
+        </span>
+      </div>
       <div className="input-text-container">{text}</div>
     </section>
   );

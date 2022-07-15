@@ -2,9 +2,16 @@ import { ReactComponent as HamMenu } from "./hamburger-menu.svg";
 import SectionHead from "./SectionHead";
 import { useState } from "react";
 
-const Annotations = ({ AnnotationList, setAnnotationList }) => {
+const Annotations = ({
+  AnnotationList,
+  setAnnotationList,
+  countPerson,
+  countOrg,
+  setCountPerson,
+  setCountOrg,
+  setDialogBox,
+}) => {
   const [openSideRight, setOpenSideRight] = useState(true);
-
   console.log(AnnotationList);
   return (
     <>
@@ -23,9 +30,15 @@ const Annotations = ({ AnnotationList, setAnnotationList }) => {
                 <span
                   className="annotation-remove"
                   onClick={() => {
-                    setAnnotationList(
-                      AnnotationList.filter((_, i) => i !== index)
-                    );
+                    setDialogBox(true);
+                    // if (annotation.tag === "Person") {
+                    //   setCountPerson((countPerson) => countPerson - 1);
+                    // } else if (annotation.tag === "Org") {
+                    //   setCountOrg((countOrg) => countOrg - 1);
+                    // }
+                    // setAnnotationList(
+                    //   AnnotationList.filter((_, i) => i !== index)
+                    // );
                   }}
                 >
                   X

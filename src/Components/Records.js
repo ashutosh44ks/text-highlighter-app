@@ -4,6 +4,7 @@ import { useState } from "react";
 
 const Records = () => {
   const [openSideLeft, setOpenSideLeft] = useState(true);
+  const [selectedItem, setSelectedItem] = useState(1);
 
   return (
     <>
@@ -17,9 +18,10 @@ const Records = () => {
           {[1, 2, 3, 4, 5, 6].map((item) => (
             <div
               className={
-                item === 1 ? "record-item record-item-selected" : "record-item"
+                item === selectedItem ? "record-item record-item-selected" : "record-item"
               }
               key={item}
+              onClick={() => setSelectedItem(item)}
             >
               {item} Lorem ipsum, dolor sit amet consectetur adipisicing elit.
               Tempore et dolores deserunt totam eveniet facere, possimus sequi?
